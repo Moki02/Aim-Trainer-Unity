@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
 
 	float endTime;
 
-	const float gameTime = 10f;
+	const float gameTime = 20f;
 
 	void Start()
 	{
