@@ -16,10 +16,16 @@ public class Timer : MonoBehaviour
 	const float gameTime = 20f;
 
 	void Start()
-	{
-		GameEnded = false;
-		endTime = Time.time + gameTime;
-	}
+{
+    TargetShooter.ResetStats(); 
+    GameEnded = false;
+    endTime = Time.time + gameTime;
+
+	 Debug.Log("Stats reset - " +
+             $"Shots: {TargetShooter.TotalShotsFired}, " +
+             $"Hits: {TargetShooter.SuccessfulHits}, " +
+             $"Misses: {MissCounter.Misses}");
+}
 
 	void Update()
 	{
@@ -31,6 +37,7 @@ public class Timer : MonoBehaviour
 		if(timeLeft <= 0)
 		{
 			GameEnded = true;
+			 Debug.Log("Game Ended Invoked");
 			OnGameEnded?.Invoke();
 
 			timeLeft = 0;

@@ -1,26 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
-	[SerializeField] TMP_Text text;
-	public static int Score { get; private set; }
+    [SerializeField] TMP_Text text;
+    public static int Score { get; private set; }
 
-	void OnEnable()
-	{
-		Target.OnTargetHit += OnTargetHit;
-	}
+    void OnEnable()
+    {
+        Target.OnTargetHit += OnTargetHit; 
+    }
 
-	void OnDisable()
-	{
-		Target.OnTargetHit -= OnTargetHit;
-	}
+    void OnDisable()
+    {
+        Target.OnTargetHit -= OnTargetHit;
+    }
 
-	void OnTargetHit()
-	{
-		Score++;
-		text.text = $"Score: {Score}";
-	}
+    void OnTargetHit()
+    {
+        Score++;
+        text.text = $"Score: {Score}";
+    }
+
+    public static void ResetScore()
+    {
+        Score = 0;
+    }
 }

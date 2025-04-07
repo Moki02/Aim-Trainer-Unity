@@ -23,4 +23,8 @@ public class MissCounter : MonoBehaviour
 		Misses++;
 		text.text = $"Misses: {Misses}";
 	}
+	 public static void ResetMisses()
+    {
+        Misses = 0;
+    }
 }
