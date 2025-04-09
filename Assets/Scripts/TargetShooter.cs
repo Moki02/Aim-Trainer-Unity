@@ -106,6 +106,7 @@ public static void ResetStats()
     SuccessfulHits = 0;
     TotalAccuracyScore = 0;
     ScoreCounter.ResetScore();
-     MissCounter.ResetMisses();
+    MissCounter.ResetMisses();
+    OnTargetMissed = null;
 }
 }

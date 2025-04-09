@@ -45,4 +45,10 @@ public class Timer : MonoBehaviour
 
 		timerText.text = $"Time Left: {timeLeft.ToString("0.0")}";
 	}
+
+	public static void ResetTimer()
+    {
+        GameEnded = false;
+        OnGameEnded = null; // Clear all subscribers
+    }
 }

@@ -7,6 +7,10 @@ public class RestartButton : MonoBehaviour
 {
 	public void Restart()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		Timer.ResetTimer();
+        TargetShooter.ResetStats();
+        
+        // Reload scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 }

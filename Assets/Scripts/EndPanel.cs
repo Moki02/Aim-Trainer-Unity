@@ -9,6 +9,7 @@ public class EndPanel : MonoBehaviour
 	void OnEnable()
 	{
 		Timer.OnGameEnded += OnGameEnded;
+		Timer.OnGameEnded += OnGameEnded;
 	}
 
 	void OnDisable()
